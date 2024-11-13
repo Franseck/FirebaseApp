@@ -11,7 +11,7 @@
        font-size: 1rem;
        padding: 5px;
     }
-    .loginDiv {
+        .loginDiv {
         background: linear-gradient(
           90deg,
           rgb(64, 90, 90) 43%,
@@ -36,4 +36,11 @@
         border-radius: 5px;
         background-color:rgb(192, 206, 206)
       }
+    }
+    .not{
+      background-image: url(./assets/404.jpg);
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+      
     }

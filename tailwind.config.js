@@ -31,6 +31,8 @@ five: "#9DB2BF",
         secondaryDark:"#297272",
         third:"#1a4146",
         forth: "#6D8B74",
+        fifth:"#DAD3BE",
+        sixth:"#254336"
       },
       fontFamily:{
         general : ["Special Elite"],

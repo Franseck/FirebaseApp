@@ -16,8 +16,8 @@ const Home = () => {
       <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 font-less">Firebase Authentication Tutorial</h1>
       <p className="mb-8 leading-relaxed text-primary font-less">This is an introductory Firebase tutorial, which covers the basics of the Firebase platform and explains how to deal with its various components and sub-components.</p>
       <div className="flex justify-center font-less ">
-        <button className="inline-flex text-tex bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary 0 rounded text-lg" onClick={()=>navigate("/Register")}>Register</button>
-        <button className="ml-4 inline-flex text-secondary bg-tex border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded text-lg" onClick={()=>navigate("/Login")}>Signin</button>
+        <button className="inline-flex text-tex bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary 0 rounded text-lg cursor-pointer" onClick={()=>navigate("/Register")}>Register</button>
+        <button className="ml-4 inline-flex text-secondary bg-tex border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded text-lg cursor-pointer" onClick={()=>navigate("/Login")}>Signin</button>
       </div>
     </div>
   </div>
