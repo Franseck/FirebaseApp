@@ -14,4 +14,3 @@ function App() {
 
 export default App;
 
-//position="top-center" autoClose={1500} />

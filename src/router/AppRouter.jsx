@@ -9,7 +9,7 @@ import Register from '../components/Register';
 
 const AppRouter = () => {
   return (
-
+<>
         <BrowserRouter>
   
       <Navbar/>
@@ -17,11 +17,10 @@ const AppRouter = () => {
                   <Route  exact path="/" element={<Home />} />
                   <Route   path="/Login" element={<Login/>} />
                   <Route   path="/Register" element={<Register/>} />
-                  
-                  <Route path="*" element={<NotFound />} />
+                     <Route path="*" element={<NotFound />} />
             </Routes>
   </BrowserRouter>
-
+</>
   )
 }
 
