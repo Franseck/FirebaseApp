@@ -1,16 +1,29 @@
-import React, { useCallback, useState } from 'react'
+import React, {  useState } from 'react'
+import {  signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../components/Firebase";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
     const [email, setEmail]= useState("")
 const [password,setPassword]= useState("")
+const navigate = useNavigate("")
 
+const login =async()=>{
+  try {
+      const response= await  signInWithEmailAndPassword (auth, email, password)
+    const user = response.user;
+  if(user){
+  navigate("/");
+   setEmail("");
+  setPassword("");
+  }
+  } catch (error) {
+      alert("Giris Yapilamadi!")
+  }
+  
+    }
 
-    const handleSubmit = useCallback((e)=> {
-      e.preventDefault();
-console.log("email", email, "password", password);
-    },[email, password])
-    
   
 
     return (
@@ -24,7 +37,7 @@ console.log("email", email, "password", password);
         <h3 className="text-[1.5rem]">SIGN IN</h3>
         <p className="text-gray-500">Enter Your Credantials to access your account </p>
     </div>
-    <form onSubmit={handleSubmit} className="flex flex-col text-left p-3 gap-5">
+    <form className="flex flex-col text-left p-3 gap-5">
         <div className="flex flex-col gap-2">
     <label className="text-gray-600" htmlFor="email">Email</label>
     <input className="login-input" type="email" id="email"  placeholder="Enter your e-mail" onChange={(e)=>setEmail(e.target.value)}/>
@@ -34,7 +47,7 @@ console.log("email", email, "password", password);
     <input className="login-input" type="text" id="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
     </div>
     <div className="text-center">
-    <button className=" w-[10rem] bg-blue-900 h-[2.5rem] uppercase hover:opacity-90 rounded-[7px] text-center justify-center">Sign in</button>
+    <button   onClick={login}  className=" w-[10rem] bg-blue-900 h-[2.5rem] uppercase hover:opacity-90 rounded-[7px] text-center justify-center">Sign in</button>
     <div className="flex justify-center items-center flex-wrap text-gray-600 mt-5 text-[0.8rem]">
        <span>Forgot your password?</span>
           <span className="text-teal-900 underline ml-3">Reset your password</span>

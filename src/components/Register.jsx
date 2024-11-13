@@ -1,7 +1,6 @@
 import React, {  useState } from "react";
 import Logo from "../assets/Logo.png";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import Toast from "./Toast";
 import { auth } from "../components/Firebase";
 
 
@@ -58,7 +57,7 @@ setPassword("");
             </div>
             <div>
               <label className="text-three text-sm mb-2 block">
-                Password
+                Create a Password
               </label>
               <input
                value={password}
@@ -83,7 +82,7 @@ setPassword("");
               >
                 I accept the{" "}
                 <a
-                  href="javascript:void(0);"
+                  href="/"
                   className="font-semibold hover:underline ml-1 text-tex"
                 >
                   Terms and Conditions
