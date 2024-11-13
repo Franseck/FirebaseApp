@@ -4,3 +4,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    .drop a{
+       font-size: 1rem;
+       padding: 5px;
+    }
+    .loginDiv {
+        background: linear-gradient(
+          90deg,
+          rgb(64, 90, 90) 43%,
+          rgb(21, 70, 90) 100%
+        );
+        @apply flex justify-center items-center min-h-screen;
+      }
+      .login-input {
+        height: 2.3rem;
+        border-radius: 0.4rem;
+        border: 1px solid rgb(139, 174, 174);
+        padding: 0.6rem;
+        @apply focus:outline-blue-400 focus:caret-slate-500;
+      }
+      .login-input::placeholder {
+        color: rgb(183, 197, 197) ;
+        font-size: 0.7rem;
+      }
+      .log{
+        border: 1px solid rgb(162, 162, 206);
+        padding: 3px;
+        border-radius: 5px;
+        background-color:rgb(192, 206, 206)
+      }
+    }
