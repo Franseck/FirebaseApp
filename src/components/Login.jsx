@@ -17,7 +17,7 @@ const [pass,setPass]= useState("")
           <div className="h-[500px] w-11/12 sm:w-[475px] bg-five rounded-[20px] p-5 flex-col justify-center text-center">
     <div className="flex justify-center items-center mt-5 gap-2">
     <span className="w-[6px] h-[39px] bg-slate-700 animate-pulse"></span>
-    <h1 className="text-[2rem]  text-teal-900 uppercase">Seckin's Restaurant</h1>
+    <h1 className="text-[2rem]  text-teal-900 uppercase">FireBase Tutorial</h1>
     </div>
     <div className="my-5">
         <h3 className="text-[1.5rem]">SIGN IN</h3>
