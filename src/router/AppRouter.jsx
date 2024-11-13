@@ -6,10 +6,12 @@ import NotFound from '../pages/NotFound';
 import Login from '../components/Login';
 import Register from '../components/Register';
 
+
 const AppRouter = () => {
   return (
     <div>
         <BrowserRouter>
+  
       <Navbar/>
             <Routes>
                   <Route  exact path="" element={<Home />} />
