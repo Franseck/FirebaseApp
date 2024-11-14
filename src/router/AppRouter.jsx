@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes, Router } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
@@ -11,7 +11,7 @@ import Register from '../components/Register';
 const AppRouter = () => {
   return (
 <>
-<Router>
+<BrowserRouter>
   
       <Navbar/>
             <Routes>
@@ -22,7 +22,7 @@ const AppRouter = () => {
       <Route path="*" element={<NotFound />} />
 </Routes>
 
-  </Router>
+  </BrowserRouter>
 </>
   )
 }
