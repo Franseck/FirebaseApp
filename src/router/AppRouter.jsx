@@ -7,18 +7,22 @@ import Login from '../components/Login';
 import Register from '../components/Register';
 
 
+
 const AppRouter = () => {
   return (
 <>
-        <BrowserRouter>
+<BrowserRouter>
   
       <Navbar/>
             <Routes>
-                  <Route  exact path="/" element={<Home />} />
-                  <Route   path="/Login" element={<Login/>} />
-                  <Route   path="/Register" element={<Register/>} />
-                     <Route path="*" element={<NotFound />} />
-            </Routes>
+
+<Route   path="/" element={<Home />} />
+<Route   path="/Login" element={<Login/>} />
+<Route   path="/Register" element={<Register/>} />
+      <Route path="*" element={<NotFound />} />
+
+</Routes>
+
   </BrowserRouter>
 </>
   )

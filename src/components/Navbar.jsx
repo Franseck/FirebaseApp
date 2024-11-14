@@ -9,9 +9,9 @@ const Navbar = () => {
 const navigate = useNavigate("")
 
 const logout = async()=> {
+    signOut(auth);
   alert("Signed out !");
-  signOut(auth);
-  navigate("/");
+  navigate("/Login");
 }
 
   return (
