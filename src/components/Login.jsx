@@ -1,13 +1,30 @@
 import React, {  useState } from 'react'
-import {  signInWithEmailAndPassword } from "firebase/auth";
+import {  signInWithEmailAndPassword , GoogleAuthProvider , signInWithPopup} from "firebase/auth";
 import { auth } from "../components/Firebase";
 import { Link, useNavigate } from 'react-router-dom';
+
+
+const provider = new GoogleAuthProvider();
 
 const Login = () => {
 
     const [email, setEmail]= useState("")
 const [password,setPassword]= useState("")
 const navigate = useNavigate("")
+
+const loginWithGoogle = async ()=>{
+try {
+  const response = await signInWithPopup(auth, provider)
+  const user = response.user;
+  if(user){
+    navigate("/");
+  }
+} catch (error) {
+  alert(error.message)
+}
+
+}
+
 
 const login =async()=>{
   try {
@@ -50,8 +67,8 @@ const login =async()=>{
     <div className="flex flex-col text-center justify-center items-center">
 
     <button   onClick={login}  className=" w-[10rem] bg-blue-900 h-[2.3rem] uppercase hover:opacity-90 rounded-[7px] hover:text-primary text-center justify-center">Sign in</button>
-    <div class="">
-    <button class=" flex items-center justify-center text-center mt-1 w-[12rem] bg-blue-900 h-[2.5rem] uppercase hover:opacity-90 rounded-[7px] hover:text-primary">
+    <div className="">
+    <button onClick={loginWithGoogle} className=" flex items-center justify-center text-center mt-1 w-[12rem] bg-blue-900 h-[2.5rem] uppercase hover:opacity-90 rounded-[7px] hover:text-primary">
         <img className="w-6 h-6 mr-2" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>Login with Google
     </button>
 </div>
