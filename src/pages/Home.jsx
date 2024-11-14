@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate("")
   
   return (
-    <div className='bg-third'>
+    <div className='bg-third h-screen'>
     <section className="text-gray-600 body-font">
   <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
     <img  src={pass} className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded-xl" alt="hero" />

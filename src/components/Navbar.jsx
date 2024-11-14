@@ -1,11 +1,18 @@
 import React from 'react'
 import Logo from "../assets/Logo.png"
 import { useNavigate } from 'react-router-dom'
-
+import {  signOut } from "firebase/auth"
+import { auth } from './Firebase'
 
 const Navbar = () => {
 
 const navigate = useNavigate("")
+
+const logout = async()=> {
+  alert("Signed out !");
+  signOut(auth);
+  navigate("/");
+}
 
   return (
     <>
@@ -35,8 +42,8 @@ const navigate = useNavigate("")
               </ul>
             </div>
             <div className='flex items-center'>
-              <button className="  border-2 border-gray-400 px-3 py-1 rounded-md">
-                Login
+              <button onClick={logout} className="  border-2 border-gray-400 px-3 py-1 rounded-md hover:text-primary hover:bg-third">
+                Logout
               </button>
             </div>
           </div>
