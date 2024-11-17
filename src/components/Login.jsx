@@ -2,9 +2,9 @@ import React, {  useState } from 'react'
 import {  signInWithEmailAndPassword , GoogleAuthProvider , signInWithPopup} from "firebase/auth";
 import { auth } from "../components/Firebase";
 import { Link, useNavigate } from 'react-router-dom';
+import { toastErrorNotify, toastSuccessNotify } from '../helpers/Toast';
 
 
-const provider = new GoogleAuthProvider();
 
 const Login = () => {
 
@@ -12,17 +12,17 @@ const Login = () => {
 const [password,setPassword]= useState("")
 const navigate = useNavigate("")
 
-const loginWithGoogle = async ()=>{
-try {
-  const response = await signInWithPopup(auth, provider)
-  const user = response.user;
-  if(user){
-    navigate("/");
-  }
-} catch (error) {
-  alert(error.message)
-}
+const loginWithGoogle = ()=>{
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+  .then((result) => {
+   navigate("/")
+   toastSuccessNotify("Logged in Successfully")
 
+  }).catch((error) => {
+toastErrorNotify(error.message)
+
+  });
 }
 
 

@@ -3,6 +3,7 @@ import Logo from "../assets/Logo.png"
 import { useNavigate } from 'react-router-dom'
 import {  signOut } from "firebase/auth"
 import { auth } from './Firebase'
+import { toastSuccessNotify } from '../helpers/Toast'
 
 const Navbar = () => {
 
@@ -10,7 +11,7 @@ const navigate = useNavigate("")
 
 const logout = async()=> {
     signOut(auth);
-  alert("Signed out !");
+  toastSuccessNotify("Signed out !");
   navigate("/Login");
 }
 
