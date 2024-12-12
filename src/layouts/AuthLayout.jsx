@@ -12,4 +12,4 @@ if(isLoggedIn) {
   )
 }
 
-export default AuthLayout
+export default AuthLayout*/
